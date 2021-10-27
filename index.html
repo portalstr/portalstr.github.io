@@ -1,1 +1,53 @@
-<h1>HELLO THERE</h1>
+
+
+
+<!DOCTYPE html>
+<html>
+<head><title>
+	Sitecore Login
+</title><link rel="shortcut icon" href="/sitecore/images/favicon.ico" /><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600italic,700italic,300,600,700,800" /><link rel="Stylesheet" type="text/css" href="/sitecore/shell/themes/standard/default/WebFramework.css" />
+  
+  <script type="text/javascript" src="/sitecore/shell/controls/lib/jQuery/jquery.js"></script>
+  <script type="text/javascript" src="/sitecore/shell/controls/lib/jQuery/jquery.watermark.js"></script>
+  <script type="text/javascript" src="/sitecore/shell/controls/webframework/webframework.js"></script>
+  
+  <style type="text/css">
+    .login-form { margin-top: 2em; }
+    .wf-content input { width: 300px; display: block; margin-bottom: 4px; }
+    p.error { margin-top: 2em; }
+    p.error span { background: #C10100; color: white; padding: 2px 4px; }
+    .external-signin { padding-left: 100px;}
+  </style>
+</head>
+<body>
+  <form method="post" action="/sitecore/admin/login.aspx?returnUrl=//cm.dxp-dev.lenovo.com@example.com/" id="LoginForm" class="wf-container" autocomplete="off">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="M2WTQm4q/P//94YWKHbMcaf9qCrn9BNOWioumP8+3IYcIfMdwcC43Pwa33L6AMUYjsno8FrXz4YHAcbR0WhafU4IUvOtxE6gl/f3wWfFcq23cd1E6kRB4Dkau0WSsjwZkKdSso4QMcPhhJ+l9eM759ePQKakkIebRn/o2Nv5679a8ZPy" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E3E2D399" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="3+k8ncwxCTP0r1PtRQEiqhaX5C4QJjIPgz+XQE6ZfgjbF2BYnY9V/ZZGl4oKhuzsR/vuX9qe9sq4AlPtktyWRqrYqH4AutRxRUa8orsCqy9LmX4Q/jVrUPJIFj32tj8ohqYJPQNoSOMIL09wbsXWY63HAWg=" />
+</div>
+      <div class="wf-content">
+        <h1>Log into Sitecore</h1>
+        
+        
+        
+        <div class="login-form">
+          <input name="LoginTextBox" type="text" value="sitecore\admin" id="LoginTextBox" title="Login" class="wf-watermarked" /> 
+          <input name="PasswordTextBox" type="password" id="PasswordTextBox" title="Password" class="wf-watermarked" /> 
+        </div>
+      </div>
+    
+    <div class="wf-footer">
+      <input type="submit" name="ctl05" value="Log in" />
+    </div>
+
+    <div class="external-signin">
+      
+    </div>
+  </form>
+</body>
+</html>
