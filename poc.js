@@ -1,8 +1,4 @@
 
-var req = new XMLHttpRequest();
-req.onload = handleResponse;
-req.open('get','/sitecore/shell/default.aspx?xmlcontrol=ChangeUserInformation',true);
-req.send();
 function handleResponse() {
     var changeReq = new XMLHttpRequest();
     changeReq.open('post', '/sitecore/shell/default.aspx?xmlcontrol=ChangeUserInformation', true);
